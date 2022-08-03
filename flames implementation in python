@@ -1,0 +1,31 @@
+name1=input("enter name1\t").lower()
+name2=input("enter name2\t").lower()
+name1=name1.replace(" ","")
+name2=name2.replace(" ","")
+print("FLAMES GAME")
+print(name1)
+print(name2)
+#checking the strings whether having same chracters or Not
+for i in name1:
+    for j in name2:
+        if(i==j):
+            name1=name1.replace(i,"")
+            name2=name2.replace(j,"")
+            break
+count=len(name1+name2)
+print(count)
+if count>0:
+    list1=["friends","lovers","affectionate","marriage","enemies","siblings"]
+    while len(list1)>1:
+        c=count%len(list1)
+        s=c-1
+        if s>=0:
+            left=list1[:s]
+            right=list1[s+1:]
+            list1=right+left
+        else:
+            list1=list1[:len(list1)-1]
+    print("relation ship is",list1[0])
+else:
+    print('enter different names')
+    
